@@ -1,0 +1,121 @@
+/* ---------- GENERAL ---------- */
+
+/* ---------- TEXT ---------- */
+
+h1, h2 {
+	font-family: 'Slabo 27px', serif;
+}
+
+a, p {
+	font-family: 'Roboto', sans-serif;
+	font-size:14px;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+nav li {
+	display:inline-block;
+	float:left;
+}
+
+.navbar-inverse {
+	background-color: #006b3a;
+}
+
+li a {
+	margin:0 auto;
+	font-size:15px;
+	color:#fff;
+}
+
+nav button {
+	margin:0 auto;
+	color:#fff;
+	font-size:15px;
+
+	height:41px;
+	width:100px;
+
+	background-color:#333;
+	border:2px;
+
+}
+
+ul.nav.navbar {
+	margin-bottom:0px;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.btn-div {
+	float:right;
+}
+
+button {
+	display:inline-block;
+	float:left;
+}
+
+.btn-div button {
+	margin:1% auto;
+	background-color:#006b3a;
+	color:#fff;
+	border-color:#fff;
+}
+
+.btn-div button:hover {
+	background-color:#fff;
+	border-color:#006b3a;
+}
+
+/* ---------- JUMBOTRON ---------- */
+
+.jumbotron {
+	background-color: #333;
+}
+
+.jumbotron h1 {
+	color: #fff;
+
+	display:inline-block;
+	float:left;
+}
+
+#onion-icon {
+	display:inline-block;
+	float:left;
+	width:50px;
+	margin:25px;
+}
+
+/* ---------- PANELS ---------- */
+
+div.panel-body a {
+	color:#006b3a;
+}
+
+/* ---------- FORM ------------ */
+
+.article-notes-div form {
+	width:75%;
+}
+
+#note-title, #note-body {
+	margin:2%;
+}
+
+.article-notes-div button {
+	margin:2%;
+	background-color:#006b3a;
+	color:#fff;
+	border-color:#fff;
+}
+
+.article-notes-div button:hover {
+	background-color:#fff;
+	border-color:#006b3a;
+}
+
+hr {
+	width:100%;
+}

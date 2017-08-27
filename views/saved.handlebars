@@ -1,0 +1,46 @@
+{{!-- JUMBOTRON BANNER & SCRAPER BUTTON--}}
+<div class="jumbotron">
+	<div class="container">
+		<h1>Saved Articles</h1>
+	</div>
+</div>
+
+<div class="container">
+
+
+	{{!-- ARTICLES POPULATE HERE --}}
+	<div class="row">
+
+		<div class="col-md-12" id="articles-display">
+
+			{{#each articles}}
+
+				<div class="panel panel-default">
+					<div class="panel-body">
+						{{!-- populate articles with headline and links --}}
+						<a href="http://www.theonion.com{{this.link}}">{{this.headline}}</a>
+
+						<div class="btn-div">
+
+							{{!-- delete article button next to each article --}}
+							<button type="button" class="btn btn-default delete-article-btn" data-id="{{this._id}}">delete</button>
+
+							{{!-- article note button next to each article --}}
+							<button type="button" class="btn btn-default article-notes-btn" data-id="{{this._id}}">article notes</button>
+
+						</div>
+
+						<hr/>
+						
+						<div class="article-notes-div">
+						</div>
+					</div>
+
+				</div>
+
+			{{/each}}
+
+		</div>
+	</div>
+
+</div>
