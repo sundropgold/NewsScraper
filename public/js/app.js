@@ -59,6 +59,8 @@ $(document).ready(function(){
 	/* ================== NOTES ================== */
 
 	// $(".article-notes-div").hide();
+	var span = $(".close").first();
+	var modal = document.getElementById("myModal");
 
 	// GET NOTES FOR INDIVIDUAL ARTICLES -------------------------------
 	$(document).on("click", ".article-notes-btn", function(){
@@ -71,49 +73,39 @@ $(document).ready(function(){
 			url:"/articles/notes/" + articleID
 		}).done(function(data){
 
+			modal.style.display = "block";
 
-			if (articleID === data[0]._id){
-			var newDiv = "<div id='" + data[0]._id +"'>";
+			if (data[0].note.length === 0) {
+				$("#article-notes-div").empty();
+			}
+			else {
 
-				newDiv += "<h2>Article Notes</h2>";
+				$("#article-notes-div").empty();
 
-				newDiv += "<form>" +
-											// note title
-											"<input type='text' class='form-control' id='note-title'>" +
-											// note body
-											"<textarea class='form-control' rows='3' id='note-body'></textarea>" +
-											"<button type='button' class='btn btn-default add-note-btn' " +
-											"data-articleid='" + data[0]._id +"'>" +
-											"add note</button>"
-										"</form><br/>";
+				var newDiv = "<div id='" + data[0]._id +"'>";
 
+					for (var i = 0; i < data[0].note.length; i++){
 
-				for (var i = 0; i < data[0].note.length; i++){
+						newDiv += 	"<br/><hr/><br/><div class='panel panel-default'>" + 
+										// note title
+										"<div class='panel-heading'>" +
+											data[0].note[i].title +
+										"</div>" +
+										// note body
+										"<div class='panel-body'>" +
+											data[0].note[i].body +
+										// delete note button
+										"<br/><button type='button' class='btn btn-default" + 
+										" delete-note-btn' data-noteid='" + data[0].note[i]._id + 
+										"'> delete </button>" + "</div>" +
+									"</div>";	
+			
+					}
 
-					newDiv += 	"<br/><hr/><br/><div class='panel panel-default'>" + 
-									// note title
-									"<div class='panel-heading'>" +
-										data[0].note[i].title +
-									"</div>" +
-									// note body
-									"<div class='panel-body'>" +
-										data[0].note[i].body +
-									// delete note button
-									"<br/><button type='button' class='btn btn-default" + 
-									" delete-note-btn' data-noteid='" + data[0].note[i]._id + 
-									"'> delete </button>" + "</div>" +
-								"</div>";	
-		
-				}
+					newDiv += "</div>";
 
-				newDiv += "</div>";
-
-				$(".article-notes-div").append(newDiv);
-
-				$(newDiv).hide();
-
-				$(newDiv).show();				
-				
+					$("#article-notes-div").append(newDiv);		
+					
 			}
 		});
 	});
@@ -163,4 +155,18 @@ $(document).ready(function(){
 		});
 
 	});
+
+	// MODAL WINDOW FUNCTIONALITY -------------------------------
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+    	modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	    if (event.target == modal) {
+	        modal.style.display = "none";
+	    }
+	}
 });

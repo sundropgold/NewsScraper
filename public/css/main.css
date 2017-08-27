@@ -97,11 +97,12 @@ div.panel-body a {
 /* ---------- FORM ------------ */
 
 .article-notes-div form {
-	width:75%;
+	width:45%;
 }
 
 #note-title, #note-body {
 	margin:2%;
+	width:50%;
 }
 
 .article-notes-div button {
@@ -118,4 +119,36 @@ div.panel-body a {
 
 hr {
 	width:100%;
+}
+
+/* ---------- MODAL ------------ */
+
+#myModal {
+	width:500px;
+	padding:1%;
+	margin:0 auto;
+	height:500px;
+	overflow-y: scroll;
+}
+
+#myModal button {
+	margin:2%;
+	background-color:#006b3a;
+	color:#fff;
+	border-color:#fff;
+}
+
+#myModal button:hover {
+	background-color:#fff;
+	border-color:#006b3a;
+}
+
+span .close {
+	margin:5px;
+	font-size:25px;
+	color:#333;
+}
+
+#myModal form, #myModal .panel {
+	margin:2%;
 }

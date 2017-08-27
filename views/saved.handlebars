@@ -32,8 +32,8 @@
 
 						<hr/>
 						
-						<div class="article-notes-div">
-						</div>
+						<!-- <div class="article-notes-div">
+						</div> -->
 					</div>
 
 				</div>
@@ -41,6 +41,30 @@
 			{{/each}}
 
 		</div>
+	</div>
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+  		<!-- Modal content -->
+  		<div class="modal-content">
+		    <span class="close">&times;</span>
+		    <br>
+
+		    <form>
+			    <h2>ARTICLE NOTES</h2>											
+				<input type='text' class='form-control' id='note-title'>
+				<textarea class='form-control' rows='3' id='note-body'></textarea>
+				<button type='button' class='btn btn-default add-note-btn' data-articleid='" + data[0]._id +"'>add note</button>
+			</form>
+			
+			<br/>
+
+			<hr/>
+
+			<div id="article-notes-div">
+		    </div>
+
+	  	</div>
 	</div>
 
 </div>
